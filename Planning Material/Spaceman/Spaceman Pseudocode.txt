@@ -1,0 +1,40 @@
+Spaceman Pseudocode:
+
+We are looking to discover the Map that is shaded out in the main background image. You will get 3 guesses per word that pops for you 
+to fill in the blanks.
+
+On top of the shaded image will be a box with an image that you can use as a hint to the word you must discover. You will also have a written hint at your disposal. The hints will cycle through simultaneously (image and content hints cycle together).
+
+The hints will show for a total of 5 seconds and then move to the next. There will be a total of 3 different images and content hints. 
+
+While you are being provided hints in the manner that is listed above you will need to enter a letter in the boxes provided. 
+
+Top Page:
+-> 2 boxes will appear
+	Box 1 = Number of Hints
+		Max 3 Hints per guessed word
+	Box 2 = Collection of X's (with max 3 X's)
+
+Pseudocode: Box 1 = 3 images that will show number of the hint being provided. Hint number 1 then hint number 2 and finally hint number 3.
+		The hint numbers will cycle through every 5 seconds and repeat until that word is guessed correctly.
+	    Box 2 = Shaded out "X"'s that will pop forward as the player enters a wrong letter.
+		The player can only get 2 guess wrong because on the third wrong guess the final "X" will pop and the game is over.
+
+Hint Processes:
+-> Images:
+	There will be 3 hints that will appear in the image section
+	This will work in conjunction of the written hints listed
+	below under the image.
+
+*-----constants-----*
+
+*-----state variables-----*
+
+*-----cached element-----*
+
+
+
+
+		
+
+	
