@@ -1,16 +1,15 @@
 /*----- constants -----*/
+const imgPath = `imgs/spaceman-0${wrongGuesses.length}`;
 
 
-
-  /*----- state variables -----*/
-
-
-  /*----- cached elements  -----*/
+/*----- state variables -----*/
 
 
-  /*----- event listeners -----*/
+/*----- cached elements  -----*/
 
 
-  /*----- functions -----*/
+/*----- event listeners -----*/
 
-  
+
+/*----- functions -----*/
+
