@@ -46,13 +46,22 @@ h2 {
   margin-bottom: 0;
 }
 
-input {
-  height: 58px;
-  width: 80%;
-  max-width: 600px;
-  border-radius: 29px;
-  border: 0px;
-  padding: 0 24px;
+#input-box input {
+  height: 10px;
+  width: 10px;
+  padding: 5px;
+  margin: 10px;
+  background-color: blanchedalmond;
+}
+
+#input-box {
+  background-color: white;
+  line-height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
 main {
@@ -64,11 +73,12 @@ main {
   padding: 16px 32px;
 }
 
+
 main1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 10px;
-  margin-top: 200px;
+  margin-top: 80px;
   background-color: rgb(3, 3, 3)
 }
 
@@ -140,11 +150,4 @@ main1 {
   padding: 10px;
   text-align: center;
   color: rgb(253, 252, 252);
-}
-
-.img-placeholder {
-  width: 355px;
-  height: 270px;
-  background-color: gray;
-  border-radius: 8px;
 }

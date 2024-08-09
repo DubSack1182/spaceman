@@ -1,5 +1,10 @@
 ***SPACEMAN***
 
+**Technology Use**
+* HTML
+* Javascript
+* CSS
+
 **Rules of the game**:
 	1. Player must guess a word
 	2. There will be 10 "HINTS" on display
