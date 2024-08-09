@@ -1,59 +1,65 @@
-const words = ["Kid", "Elephant", "Murder", "France", "Vatican", "Milan", "Mars", "Seaweed", "Venus", "Monaco",];
+let words = ["Kid", "Elephant", "Murder", "France", "Vatican", "Milan", "Mars", "Seaweed", "Venus", "Monaco",];
+let hints = ["A baby goat", "A Mammal that cannot jump", "A group of crows", "Statue of Liberty was gifted by", "Smallest country in the world", "Fashion Capital of the world", "The Red Planet", "Traditional wrap for Sushi", "Hottest planet in the solar system", "Second smallest country in the world"]
 
 const inputBox = document.querySelector('#input-box');
 const playAgainBtn = document.querySelector('#play-again-button');
 const submitBtn = document.querySelector('#button');
 const guessesLeft = document.querySelector('#guesses-left');
+const hint = document.querySelector(".hint-container")
+
 let message = document.querySelector('#message');
 let img = document.querySelector('spaceman');
 
 submitBtn.addEventListener('click', handleSubmit);
 playAgainBtn.addEventListener('click', initGame);
 
-const randomWord = getRandomWord();
-
+let randomIndex = getRandomIndex();
+let randomWord = words[randomIndex]
+let randomHint = hints[randomIndex]
 let numGuesses = 6
 let newMessage
 
 initGame();
 
-function getRandomWord() {
+function getRandomIndex() {
     const randomIndex = Math.floor(Math.random() * words.length);
-    return words[randomIndex];
-
-    incorrectGuesses = [];
-    remainingAttempts = MAX_ATTEMPTS;
+    return randomIndex;
 
 }
 
-console.log(randomWord);
 
+
+function updateHint() {
+    hint.textContent = randomHint
+}
+console.log(randomHint)
 function countTurns() {
-    // img.src ="Spaceman-Images/spaceman-6.png";
-
-    // inputBox.forEach(function (element) {
-    // element.disabled = false;
-    // });
-    // 
-    // let createBoxesForHiddenWord = '';
-    // for (let i = 0; i < word.length; i++) {
-    // createBoxesForHiddenWord += `<input type="text" value='' disabled>`;
-    // }
-
     numGuesses--
+}
+
+function nextWord() {
+    words.splice(randomIndex, 1)
+    hints.splice(randomIndex, 1)
+    randomIndex = getRandomIndex();
+    randomWord = words[randomIndex]
+    randomHint = hints[randomIndex]
 }
 
 function handleSubmit(event) {
     if (numGuesses === 0) return
-    console.log(inputBox.value)
+    
 
     if (randomWord.toLowerCase() === inputBox.value.toLowerCase()) {
         newMessage = "Great!"
+        nextWord()
     } else {
         newMessage = "LOSER!"
         countTurns()
     }
     render()
+}
+function checkWin() {
+    if (words.length === 0) newMessage = "YOU WON!"
 }
 
 function clearMessage() {
@@ -74,39 +80,29 @@ function checkCounter() {
 
 function render() {
     checkCounter()
+    checkWin()
     updateMessage()
     updateCounter()
     setTimeout(() => {
         clearMessage()
         clearInput()
+        updateHint()
     }, 2000)
 }
 
 
 function initGame() {
-    // inputBox.querySelectorAll('input')[i].value = buttonValue;
-    // message.innerText = 'Word Correct!';
-    // inputBox.push(buttonValue);
-    // if (word.length === inputBox.length) {
-    // message.innerText = 'Words guessed! You won!';
-    // alphaBtnInput.forEach(function (element) {
-    // element.disabled = true;
-    // });
-    // 
-    // }else {
-    // maxGuesses--;
-    // guessesLeft.innerText = 'Guesses Left:' + maxGuesses;
-    // message.innerText = 'Wrong Letter.';
-    // 
-    // if (maxGuesses <= 0) {
-    // message.innerText = 'Game Over!';
-    // guessesLeft.innerText = 'Click "Generate Word" to play again.';
-    // alphaBtnInput.forEach(function (element) {
-    // element.disabled = true;
-    // });
-    // img.src = 'Spaceman-Images/spaceman-5.png';
-    // 
-    // }
-    // };
+    words = ["Kid", "Elephant", "Murder", "France", "Vatican", "Milan", "Mars", "Seaweed", "Venus", "Monaco",];
+    hints = ["A baby goat", "A Mammal that cannot jump", "A group of crows", "Statue of Liberty was gifted by", "Smallest country in the world", "Fashion Capital of the world", "The Red Planet", "Traditional wrap for Sushi", "Hottest planet in the solar system", "Second smallest country in the world"]
+    randomIndex = getRandomIndex();
+    randomWord = words[randomIndex]
+    randomHint = hints[randomIndex]
+    numGuesses = 6
+    newMessage = ""
+
+    updateHint()
+    render()
 }
+
+
 
