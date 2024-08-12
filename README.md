@@ -1,5 +1,9 @@
 # SPACEMAN
 
+![alt text](<README image - 1.png>)
+
+
+### Lets Check the Game Out!!
 (https://dubsack1182.github.io/spaceman/)
 
 ## **Technology Use**
